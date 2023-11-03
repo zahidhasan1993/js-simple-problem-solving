@@ -4,7 +4,6 @@ const a = [1, 2, 3, 4, 1, 5, 2, 0, 15, 5, 10];
 
 const b = a.filter((value, index, arr) => arr.indexOf(value) !== index);
 
-
 //find the max and min number of the array
 
 const max = Math.max(...a);
@@ -64,6 +63,72 @@ const findingEven = (arr) => {
   return even;
 };
 
+// find the some of all element in an array
 
+const sumOfAll = (arr) => {
+  const sum = arr.reduce((pre, cur) => pre + cur, 0);
+  return sum;
+};
 
-console.log(findingOdd(oddEvenArr));
+// find fictorial of a given number
+
+const findFactorial = (num) => {
+  let factorial = 1;
+  for (let i = 1; i <= num; i++) {
+    factorial = factorial * i;
+  }
+  return factorial;
+};
+
+//finding prime number
+
+const findingPrimeNumber = (num) => {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return `${num} is not a prime number`;
+    } else {
+      return `${num} is a prime number`;
+    }
+  }
+};
+
+// find vowel and consonant
+
+const findVowelAndConsonant = (alp) => {
+  const newAlp = alp.toLowerCase();
+  if (
+    newAlp == "a" ||
+    newAlp == "e" ||
+    newAlp == "i" ||
+    newAlp == "o" ||
+    newAlp == "u"
+  ) {
+    return `${alp} is vowel`;
+  } else {
+    return `${alp} is consonant`;
+  }
+};
+
+// find vowels from string
+
+const findVowelCount = (sen) => {
+  const vowel = ["a", "e", "i", "o", "u"];
+  let count = 0;
+  for (const latter of sen.toLowerCase()) {
+    if (vowel.includes(latter)) {
+      count = count + 1;
+    }
+  }
+  return count;
+};
+
+// reverse a string
+
+const reverseString = (str) => {
+  const strToArray = str.split("");
+  const strArrayReverse = strToArray.reverse();
+  const reverseArrayToStr = strArrayReverse.join("");
+  return reverseArrayToStr;
+};
+
+console.log(reverseString("this letter is for the king of the socity i want to give a msg to you"));
